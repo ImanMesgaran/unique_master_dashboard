@@ -21,12 +21,17 @@ class Routes {
       // Splash
       case initialPage:
         return MaterialPageRoute(
-          builder: (BuildContext context) => HomePageRoute(),
+          builder: (BuildContext context) => HomePageRoute(
+            selectedItem: 0,
+          ),
         );
 
       case homePage:
+        final _args = args as int;
         return MaterialPageRoute(
-          builder: (BuildContext context) => HomePageRoute(),
+          builder: (BuildContext context) => HomePageRoute(
+            selectedItem: _args,
+          ),
         );
 
       case schedulesPage:

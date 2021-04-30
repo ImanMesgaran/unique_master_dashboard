@@ -21,9 +21,9 @@ class NavigationService extends INavigationService {
   }
 
   @override
-  Future pushToHomePage() {
+  Future pushToHomePage({@required int selectedPage}) {
     return _customNavigator.mainNavigatorKey.currentState
-        .pushNamed(Routes.homePage);
+        .pushNamed(Routes.homePage, arguments: selectedPage);
   }
 
   @override

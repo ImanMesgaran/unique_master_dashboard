@@ -12,7 +12,7 @@ abstract class INavigationService {
   Future<dynamic> pushToSplash();
 
   // Home route
-  Future pushToHomePage();
+  Future pushToHomePage({@required int selectedPage});
 
   // Schedules Page
   Future pushToSchedulesPage();

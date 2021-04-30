@@ -5,7 +5,9 @@ import 'package:unique_master_dashboard/core/global/colors_web.dart';
 import '../../widgets/app_scaffold/app_scaffold.dart';
 
 class HomePageRoute extends StatefulWidget {
-  HomePageRoute({Key key}) : super(key: key);
+  HomePageRoute({Key key, @required this.selectedItem}) : super(key: key);
+
+  final int selectedItem;
 
   @override
   _HomePageRouteState createState() => _HomePageRouteState();
@@ -17,7 +19,7 @@ class _HomePageRouteState extends State<HomePageRoute> {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-        selectedItem: 0,
+        selectedItem: widget.selectedItem ?? 0,
         pageTitle: "home_page.title".tr(),
         body: Container(
           alignment: Alignment.center,
