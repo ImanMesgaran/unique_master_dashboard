@@ -41,115 +41,123 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
 
           child: Row(
             children: [
-              Container(
-                width: 300,
-                height: 700,
-                child: SingleChildScrollView(
-                  child: Column(
-                    // Important: Remove any padding from the ListView.
-                    //padding: EdgeInsets.zero,
-                    children: <Widget>[
-                      Container(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 70, vertical: 40),
-                        height: 100,
-                        child: OctoImage(
-                          image: Image.asset(
-                            "assets/icons/brand_icon.png",
-                            alignment: Alignment.center,
-                            isAntiAlias: true,
-                            fit: BoxFit.fitWidth,
-                          ).image,
-                          placeholderBuilder: OctoPlaceholder.blurHash(
-                            'LEHV6nWB2yk8pyo0adR*.7kCMdnj',
-                          ),
-                          errorBuilder: OctoError.icon(color: Colors.red),
+              Expanded(
+                child: ListView(
+                  // Important: Remove any padding from the ListView.
+                  padding: EdgeInsets.zero,
+                  children: <Widget>[
+                    Container(
+                      margin:
+                          EdgeInsets.symmetric(horizontal: 70, vertical: 40),
+                      // padding:
+                      //     EdgeInsets.symmetric(horizontal: 70, vertical: 40),
+                      height: 140,
+                      child: OctoImage(
+                        image: Image.asset(
+                          "assets/icons/brand_icon.png",
+                          alignment: Alignment.center,
+                          isAntiAlias: true,
                           fit: BoxFit.fitWidth,
+                        ).image,
+                        placeholderBuilder: OctoPlaceholder.blurHash(
+                          'LEHV6nWB2yk8pyo0adR*.7kCMdnj',
                         ),
+                        errorBuilder: OctoError.icon(color: Colors.red),
+                        fit: BoxFit.fitWidth,
                       ),
-                      DrawerListTile(
-                        id: 1,
-                        isSelected: state.selectedIndex == 1,
-                        text: 'home_page.drawer_items.dashboard'.tr(),
-                        onTap: (int id) {
-                          print('Dashboard Clicked!');
-                          _drawerCubit.changeSelection(selectedItem: 1);
-                        },
-                      ),
-                      DrawerListTile(
-                        id: 2,
-                        isSelected: state.selectedIndex == 2,
-                        text: 'home_page.drawer_items.my_courses'.tr(),
-                        onTap: (int id) {
-                          print('my_courses Clicked!');
-                          _drawerCubit.changeSelection(selectedItem: 2);
-                        },
-                      ),
-                      DrawerListTile(
-                        id: 3,
-                        isSelected: state.selectedIndex == 3,
-                        text: 'home_page.drawer_items.schedule'.tr(),
-                        onTap: (int id) {
-                          print('schedule Clicked!');
-                          _drawerCubit.changeSelection(selectedItem: 3);
-                        },
-                      ),
-                      DrawerListTile(
-                        id: 4,
-                        isSelected: state.selectedIndex == 4,
-                        text: 'home_page.drawer_items.homework'.tr(),
-                        onTap: (int id) {
-                          print('homework Clicked!');
-                          _drawerCubit.changeSelection(selectedItem: 4);
-                        },
-                      ),
-                      DrawerListTile(
-                        id: 5,
-                        isSelected: state.selectedIndex == 5,
-                        text: 'home_page.drawer_items.quizes'.tr(),
-                        onTap: (int id) {
-                          print('quizes Clicked!');
-                          _drawerCubit.changeSelection(selectedItem: 5);
-                        },
-                      ),
-                      DrawerListTile(
-                        id: 6,
-                        isSelected: state.selectedIndex == 6,
-                        text: 'home_page.drawer_items.transactions'.tr(),
-                        onTap: (int id) {
-                          print('transactions Clicked!');
-                          _drawerCubit.changeSelection(selectedItem: 6);
-                        },
-                      ),
-                      DrawerListTile(
-                        id: 7,
-                        isSelected: state.selectedIndex == 7,
-                        text: 'home_page.drawer_items.support'.tr(),
-                        onTap: (int id) {
-                          print('support Clicked!');
-                          _drawerCubit.changeSelection(selectedItem: 7);
-                        },
-                      ),
-                      DrawerListTile(
-                        id: 8,
-                        isSelected: state.selectedIndex == 8,
-                        text: 'home_page.drawer_items.marks'.tr(),
-                        onTap: (int id) {
-                          print('marks Clicked!');
-                          _drawerCubit.changeSelection(selectedItem: 8);
-                        },
-                      ),
-                      DrawerListTile(
-                        id: 9,
-                        isSelected: state.selectedIndex == 9,
-                        text: 'home_page.drawer_items.setting'.tr(),
-                        onTap: (int id) {
-                          print('setting Clicked!');
-                          _drawerCubit.changeSelection(selectedItem: 9);
-                        },
-                      ),
-                    ],
-                  ),
+                    ),
+                    DrawerListTile(
+                      id: 1,
+                      isSelected: state.selectedIndex == 1,
+                      text: 'home_page.drawer_items.dashboard'.tr(),
+                      icon: 'assets/icons/dashboard.png',
+                      onTap: (int id) {
+                        print('Dashboard Clicked!');
+                        _drawerCubit.changeSelection(selectedItem: 1);
+                      },
+                    ),
+                    DrawerListTile(
+                      id: 2,
+                      isSelected: state.selectedIndex == 2,
+                      text: 'home_page.drawer_items.my_courses'.tr(),
+                      icon: 'assets/icons/my_courses.png',
+                      onTap: (int id) {
+                        print('my_courses Clicked!');
+                        _drawerCubit.changeSelection(selectedItem: 2);
+                      },
+                    ),
+                    DrawerListTile(
+                      id: 3,
+                      isSelected: state.selectedIndex == 3,
+                      text: 'home_page.drawer_items.schedule'.tr(),
+                      icon: 'assets/icons/calendar.png',
+                      onTap: (int id) {
+                        print('schedule Clicked!');
+                        _drawerCubit.changeSelection(selectedItem: 3);
+                      },
+                    ),
+                    DrawerListTile(
+                      id: 4,
+                      isSelected: state.selectedIndex == 4,
+                      text: 'home_page.drawer_items.homework'.tr(),
+                      icon: 'assets/icons/home_work.png',
+                      onTap: (int id) {
+                        print('homework Clicked!');
+                        _drawerCubit.changeSelection(selectedItem: 4);
+                      },
+                    ),
+                    DrawerListTile(
+                      id: 5,
+                      isSelected: state.selectedIndex == 5,
+                      text: 'home_page.drawer_items.quizes'.tr(),
+                      icon: 'assets/icons/quiz.png',
+                      onTap: (int id) {
+                        print('quizes Clicked!');
+                        _drawerCubit.changeSelection(selectedItem: 5);
+                      },
+                    ),
+                    DrawerListTile(
+                      id: 6,
+                      isSelected: state.selectedIndex == 6,
+                      text: 'home_page.drawer_items.transactions'.tr(),
+                      icon: 'assets/icons/transaction.png',
+                      onTap: (int id) {
+                        print('transactions Clicked!');
+                        _drawerCubit.changeSelection(selectedItem: 6);
+                      },
+                    ),
+                    DrawerListTile(
+                      id: 7,
+                      isSelected: state.selectedIndex == 7,
+                      text: 'home_page.drawer_items.support'.tr(),
+                      icon: 'assets/icons/support.png',
+                      onTap: (int id) {
+                        print('support Clicked!');
+                        _drawerCubit.changeSelection(selectedItem: 7);
+                      },
+                    ),
+                    DrawerListTile(
+                      id: 8,
+                      isSelected: state.selectedIndex == 8,
+                      text: 'home_page.drawer_items.marks'.tr(),
+                      icon: 'assets/icons/marks.png',
+                      onTap: (int id) {
+                        print('marks Clicked!');
+                        _drawerCubit.changeSelection(selectedItem: 8);
+                      },
+                    ),
+                    DrawerListTile(
+                      id: 9,
+                      isSelected: state.selectedIndex == 9,
+                      text: 'home_page.drawer_items.setting'.tr(),
+                      icon: 'assets/icons/setting.png',
+                      onTap: (int id) {
+                        print('setting Clicked!');
+                        _drawerCubit.changeSelection(selectedItem: 9);
+                      },
+                    ),
+                    SizedBox(height: 70),
+                  ],
                 ),
               ),
               if (widget.permanentlyDisplay)
