@@ -1,0 +1,20 @@
+{
+  "global": {
+    "app_name": "English App name",
+    "not_implemented_page": "Only Schedule page is implemented."
+  },
+  "home_page": {
+    "title": "Dashboard",
+    "drawer_items": {
+      "dashboard": "Dashboard",
+      "my_courses": "My Courses",
+      "schedule": "Schedule",
+      "homework": "Homework",
+      "quizes": "Quizes",
+      "transactions": "Transactions",
+      "support": "Support",
+      "marks": "Marks",
+      "setting": "Setting"
+    }
+  }
+}
