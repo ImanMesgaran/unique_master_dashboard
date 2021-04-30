@@ -2,7 +2,7 @@ import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'features/schedules/presentation/cubit/drawer_cubit/drawer_cubit.dart';
+import 'features/schedules/presentation/cubit/cubit/drawer_cubit.dart';
 import 'services/navigation/navigation_service.dart';
 import 'services/navigation/navigation_service_interface.dart';
 import 'services/navigation/routes/custom_navigators.dart';
