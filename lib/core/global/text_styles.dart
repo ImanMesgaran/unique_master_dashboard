@@ -16,4 +16,4 @@ const TextStyle gray__24__400 = const TextStyle(
     color: app_gray_one_color,
     fontStyle: FontStyle.normal,
     fontWeight: FontWeight.w400,
-    fontSize: 13);
+    fontSize: 24);

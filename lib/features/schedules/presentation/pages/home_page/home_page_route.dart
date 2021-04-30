@@ -1,7 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import 'mobile/mobile_page_scaffold.dart';
-import 'web/web_page_scaffold.dart';
+import '../../widgets/app_scaffold/app_scaffold.dart';
 
 class HomePageRoute extends StatefulWidget {
   HomePageRoute({Key key}) : super(key: key);
@@ -11,6 +11,8 @@ class HomePageRoute extends StatefulWidget {
 }
 
 class _HomePageRouteState extends State<HomePageRoute> {
+  GlobalKey<ScaffoldState> _drawerKey = GlobalKey();
+
   @override
   void initState() {
     super.initState();
@@ -18,11 +20,12 @@ class _HomePageRouteState extends State<HomePageRoute> {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      if (constraints.maxWidth < 500) {
-        return MobilePageScaffold();
-      } else
-        return WebPageScaffold();
-    });
+    return AppScaffold(
+        pageTitle: "home_page.title".tr(),
+        body: Container(
+          height: 200,
+          width: 200,
+          color: Colors.red,
+        ));
   }
 }

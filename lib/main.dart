@@ -32,10 +32,18 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: Routes.getGeneratedRoute,
       navigatorKey: Service().navigation.getMainNavigatorKey,
       title: 'Dashboard',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      builder: (context, navigator) {
+        var lang = Localizations.localeOf(context).languageCode;
+
+        return Theme(
+          data: ThemeData(
+            textTheme: Theme.of(context).textTheme.apply(
+                  fontFamily: "Poppins",
+                ),
+          ),
+          child: navigator,
+        );
+      },
     );
   }
 }
