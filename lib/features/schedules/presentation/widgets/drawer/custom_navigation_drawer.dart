@@ -84,7 +84,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                       onTap: (int id) {
                         print('Dashboard Clicked!');
                         _drawerCubit.changeSelection(selectedItem: 1);
-                        _navigator.pushToHomePage();
+                        _navigator.pushToHomePage(selectedPage: 1);
                       },
                     ),
                     DrawerListTile(
@@ -95,7 +95,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                       onTap: (int id) {
                         print('my_courses Clicked!');
                         _drawerCubit.changeSelection(selectedItem: 2);
-                        _navigator.pushToHomePage();
+                        _navigator.pushToHomePage(selectedPage: 2);
                       },
                     ),
                     DrawerListTile(
@@ -117,7 +117,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                       onTap: (int id) {
                         print('homework Clicked!');
                         _drawerCubit.changeSelection(selectedItem: 4);
-                        _navigator.pushToHomePage();
+                        _navigator.pushToHomePage(selectedPage: 4);
                       },
                     ),
                     DrawerListTile(
@@ -128,7 +128,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                       onTap: (int id) {
                         print('quizes Clicked!');
                         _drawerCubit.changeSelection(selectedItem: 5);
-                        _navigator.pushToHomePage();
+                        _navigator.pushToHomePage(selectedPage: 5);
                       },
                     ),
                     DrawerListTile(
@@ -139,7 +139,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                       onTap: (int id) {
                         print('transactions Clicked!');
                         _drawerCubit.changeSelection(selectedItem: 6);
-                        _navigator.pushToHomePage();
+                        _navigator.pushToHomePage(selectedPage: 6);
                       },
                     ),
                     DrawerListTile(
@@ -150,7 +150,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                       onTap: (int id) {
                         print('support Clicked!');
                         _drawerCubit.changeSelection(selectedItem: 7);
-                        _navigator.pushToHomePage();
+                        _navigator.pushToHomePage(selectedPage: 7);
                       },
                     ),
                     DrawerListTile(
@@ -161,7 +161,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                       onTap: (int id) {
                         print('marks Clicked!');
                         _drawerCubit.changeSelection(selectedItem: 8);
-                        _navigator.pushToHomePage();
+                        _navigator.pushToHomePage(selectedPage: 8);
                       },
                     ),
                     DrawerListTile(
@@ -172,7 +172,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                       onTap: (int id) {
                         print('setting Clicked!');
                         _drawerCubit.changeSelection(selectedItem: 9);
-                        _navigator.pushToHomePage();
+                        _navigator.pushToHomePage(selectedPage: 9);
                       },
                     ),
                     SizedBox(height: 70),
