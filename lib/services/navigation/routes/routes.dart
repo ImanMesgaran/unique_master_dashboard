@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:unique_master_dashboard/features/schedules/presentation/pages/schedules/schedules_page_route.dart';
 
 import '../../../features/schedules/presentation/pages/home_page/home_page_route.dart';
 
@@ -8,6 +9,9 @@ class Routes {
 
   // Home
   static const String homePage = '/homePage';
+
+  // Schedules page
+  static const String schedulesPage = '/schedulesPage';
 
   static Route<dynamic> getGeneratedRoute(RouteSettings settings) {
     // Getting arguments passed in while calling Navigator.pushNamed
@@ -20,13 +24,15 @@ class Routes {
           builder: (BuildContext context) => HomePageRoute(),
         );
 
-      // case homePage:
-      //   return MaterialPageRoute(
-      //     builder: (BuildContext context) => BlocProvider(
-      //       create: (context) => di.getIt<HomeCubit>(),
-      //       child: HomePageRoute(),
-      //     ),
-      //   );
+      case homePage:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => HomePageRoute(),
+        );
+
+      case schedulesPage:
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SchedulesPageRoute(),
+        );
     }
   }
 }

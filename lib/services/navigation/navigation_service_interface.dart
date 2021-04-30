@@ -13,4 +13,7 @@ abstract class INavigationService {
 
   // Home route
   Future pushToHomePage();
+
+  // Schedules Page
+  Future pushToSchedulesPage();
 }

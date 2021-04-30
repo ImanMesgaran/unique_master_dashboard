@@ -4,13 +4,18 @@ import 'package:octo_image/octo_image.dart';
 import 'package:unique_master_dashboard/features/schedules/presentation/cubit/cubit/drawer_cubit.dart';
 import 'package:unique_master_dashboard/features/schedules/presentation/widgets/list_tiles/drawer_list_tile.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:unique_master_dashboard/services/navigation/navigation_service_interface.dart';
 import '../../../../../injection_container.dart' as di;
 
 class CustomNavigationDrawer extends StatefulWidget {
-  const CustomNavigationDrawer({@required this.permanentlyDisplay, Key key})
-      : super(key: key);
+  const CustomNavigationDrawer({
+    @required this.permanentlyDisplay,
+    Key key,
+    this.selectedItem,
+  }) : super(key: key);
 
   final bool permanentlyDisplay;
+  final int selectedItem;
 
   @override
   _CustomNavigationDrawerState createState() => _CustomNavigationDrawerState();
@@ -18,12 +23,17 @@ class CustomNavigationDrawer extends StatefulWidget {
 
 class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
   final _drawerCubit = di.getIt<DrawerCubit>();
+  final _navigator = di.getIt<INavigationService>();
 
   @override
   void initState() {
     super.initState();
 
     //WidgetsFlutterBinding.ensureInitialized();
+    _drawerCubit.emitState(
+        state: _drawerCubit.state.copyWith(
+      selectedIndex: widget.selectedItem,
+    ));
   }
 
   @override
@@ -74,6 +84,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                       onTap: (int id) {
                         print('Dashboard Clicked!');
                         _drawerCubit.changeSelection(selectedItem: 1);
+                        _navigator.pushToHomePage();
                       },
                     ),
                     DrawerListTile(
@@ -84,6 +95,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                       onTap: (int id) {
                         print('my_courses Clicked!');
                         _drawerCubit.changeSelection(selectedItem: 2);
+                        _navigator.pushToHomePage();
                       },
                     ),
                     DrawerListTile(
@@ -94,6 +106,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                       onTap: (int id) {
                         print('schedule Clicked!');
                         _drawerCubit.changeSelection(selectedItem: 3);
+                        _navigator.pushToSchedulesPage();
                       },
                     ),
                     DrawerListTile(
@@ -104,6 +117,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                       onTap: (int id) {
                         print('homework Clicked!');
                         _drawerCubit.changeSelection(selectedItem: 4);
+                        _navigator.pushToHomePage();
                       },
                     ),
                     DrawerListTile(
@@ -114,6 +128,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                       onTap: (int id) {
                         print('quizes Clicked!');
                         _drawerCubit.changeSelection(selectedItem: 5);
+                        _navigator.pushToHomePage();
                       },
                     ),
                     DrawerListTile(
@@ -124,6 +139,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                       onTap: (int id) {
                         print('transactions Clicked!');
                         _drawerCubit.changeSelection(selectedItem: 6);
+                        _navigator.pushToHomePage();
                       },
                     ),
                     DrawerListTile(
@@ -134,6 +150,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                       onTap: (int id) {
                         print('support Clicked!');
                         _drawerCubit.changeSelection(selectedItem: 7);
+                        _navigator.pushToHomePage();
                       },
                     ),
                     DrawerListTile(
@@ -144,6 +161,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                       onTap: (int id) {
                         print('marks Clicked!');
                         _drawerCubit.changeSelection(selectedItem: 8);
+                        _navigator.pushToHomePage();
                       },
                     ),
                     DrawerListTile(
@@ -154,6 +172,7 @@ class _CustomNavigationDrawerState extends State<CustomNavigationDrawer> {
                       onTap: (int id) {
                         print('setting Clicked!');
                         _drawerCubit.changeSelection(selectedItem: 9);
+                        _navigator.pushToHomePage();
                       },
                     ),
                     SizedBox(height: 70),

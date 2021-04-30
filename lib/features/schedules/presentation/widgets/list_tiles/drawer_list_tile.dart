@@ -60,7 +60,7 @@ class DrawerListTile extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
-          color: isSelected ? app_light_purple_one_color : app_white_color,
+          color: isSelected ? app_light_purple_one_color : Colors.transparent,
         ),
       ),
     );

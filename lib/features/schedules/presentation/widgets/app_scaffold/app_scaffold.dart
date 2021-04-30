@@ -7,12 +7,16 @@ import '../drawer/custom_navigation_drawer.dart';
 /// A responsive scaffold for our application.
 /// Displays the navigation drawer alongside the [Scaffold] if the screen/window size is large enough
 class AppScaffold extends StatelessWidget {
-  const AppScaffold({@required this.body, @required this.pageTitle, Key key})
-      : super(key: key);
+  const AppScaffold({
+    @required this.body,
+    @required this.pageTitle,
+    Key key,
+    @required this.selectedItem,
+  }) : super(key: key);
 
   final Widget body;
-
   final String pageTitle;
+  final int selectedItem;
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +24,9 @@ class AppScaffold extends StatelessWidget {
     return Row(
       children: [
         if (!displayMobileLayout)
-          const CustomNavigationDrawer(
+          CustomNavigationDrawer(
             permanentlyDisplay: true,
+            selectedItem: selectedItem,
           ),
         Expanded(
           child: Scaffold(

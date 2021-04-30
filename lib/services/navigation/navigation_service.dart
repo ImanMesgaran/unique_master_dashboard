@@ -23,10 +23,13 @@ class NavigationService extends INavigationService {
   @override
   Future pushToHomePage() {
     return _customNavigator.mainNavigatorKey.currentState
-        .pushNamedAndRemoveUntil(
-      Routes.homePage,
-      (route) => false,
-    );
+        .pushNamed(Routes.homePage);
+  }
+
+  @override
+  Future pushToSchedulesPage() {
+    return _customNavigator.mainNavigatorKey.currentState
+        .pushNamed(Routes.schedulesPage);
   }
 
   /// internal methods
