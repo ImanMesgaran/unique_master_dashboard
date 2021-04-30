@@ -11,7 +11,14 @@ import 'colors_web.dart';
     fontWeight: FontWeight.w600,
     fontSize: 16);*/
 
-// Font Size: 13
+// Font Size: 16
+const TextStyle gray__16__400 = const TextStyle(
+    color: app_gray_two_color,
+    fontStyle: FontStyle.normal,
+    fontWeight: FontWeight.w400,
+    fontSize: 16);
+
+// Font Size: 24
 const TextStyle gray__24__400 = const TextStyle(
     color: app_gray_one_color,
     fontStyle: FontStyle.normal,

@@ -3,6 +3,17 @@
     "app_name": "English App name"
   },
   "home_page": {
-    "title": "Dashboard"
+    "title": "Dashboard",
+    "drawer_items": {
+      "dashboard": "Dashboard",
+      "my_courses": "My Courses",
+      "schedule": "Schedule",
+      "homework": "Homework",
+      "quizes": "Quizes",
+      "transactions": "Transactions",
+      "support": "Support",
+      "marks": "Marks",
+      "setting": "Setting"
+    }
   }
 }
