@@ -110,6 +110,16 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
+  assets:
+    # localization
+    - assets/lang/en-US.json
+    - assets/lang/de-DE.json
+    # icons
+    - assets/icons/
+    # images
+    - assets/images/
+    # Files
+    - assets/files/
   fonts:
     - family: Poppins
       fonts:

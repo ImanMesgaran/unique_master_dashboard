@@ -1,5 +1,8 @@
 {
   "global": {
     "app_name": "English App name"
+  },
+  "home_page": {
+    "title": "Dashboard"
   }
 }

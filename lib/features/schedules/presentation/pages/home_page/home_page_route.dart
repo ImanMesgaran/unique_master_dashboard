@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:unique_master_dashboard/features/schedules/presentation/widgets/drawer/custom_navigation_drawer.dart';
 
 class HomePageRoute extends StatefulWidget {
   HomePageRoute({Key key}) : super(key: key);
@@ -10,6 +11,12 @@ class HomePageRoute extends StatefulWidget {
 class _HomePageRouteState extends State<HomePageRoute> {
   @override
   Widget build(BuildContext context) {
-    return Container(height: 200, width: 200, color: Colors.red);
+    return Scaffold(
+        drawer: CustomNavigationDrawer(),
+        body: Container(
+          height: 200,
+          width: 200,
+          color: Colors.red,
+        ));
   }
 }
