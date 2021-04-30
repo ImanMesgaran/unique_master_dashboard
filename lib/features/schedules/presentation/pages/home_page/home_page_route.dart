@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:unique_master_dashboard/features/schedules/presentation/widgets/drawer/custom_navigation_drawer.dart';
+
+import 'mobile/mobile_page_scaffold.dart';
+import 'web/web_page_scaffold.dart';
 
 class HomePageRoute extends StatefulWidget {
   HomePageRoute({Key key}) : super(key: key);
@@ -10,13 +12,17 @@ class HomePageRoute extends StatefulWidget {
 
 class _HomePageRouteState extends State<HomePageRoute> {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        drawer: CustomNavigationDrawer(),
-        body: Container(
-          height: 200,
-          width: 200,
-          color: Colors.red,
-        ));
+    return LayoutBuilder(builder: (context, constraints) {
+      if (constraints.maxWidth < 500) {
+        return MobilePageScaffold();
+      } else
+        return WebPageScaffold();
+    });
   }
 }
