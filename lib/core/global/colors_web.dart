@@ -18,4 +18,5 @@ const Color app_light_purple_two_color = Color(0xff6D07CB);
 const Color app_light_purple_three_color = Color(0xffEFADFF);
 const Color app_orange_color = Color(0xffF4B740);
 const Color app_green_color = Color(0xff00BA88);
-
+const Color app_red_color = Color(0xffED2E7E);
+const Color app_blue_color = Color(0xff1CC8EE);

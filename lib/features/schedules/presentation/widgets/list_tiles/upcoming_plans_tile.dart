@@ -24,24 +24,46 @@ class UpCommingPlansTile extends StatelessWidget {
         color: app_gray_six_color,
       ),
       padding: EdgeInsets.symmetric(horizontal: 17, vertical: 12),
+      margin: EdgeInsets.symmetric(vertical: 7.5),
+      width: MediaQuery.of(context).size.width / 4,
       child: Row(
         children: [
-          Text(title, style: black__18__600),
-          SizedBox(
-            width: 16,
+          Flexible(
+              flex: 4,
+              child: FittedBox(
+                  fit: BoxFit.fitWidth,
+                  child: Text(title, style: black__18__600))),
+          SizedBox(width: 16),
+          Flexible(
+            flex: 1,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(2),
+                color: seperatorColor,
+              ),
+              width: 4,
+              height: 35,
+            ),
           ),
-          VerticalDivider(
-            color: seperatorColor,
-            width: 4,
-          ),
-          SizedBox(
-            width: 16,
-          ),
-          Column(
-            children: [
-              Text(title, style: gray__16__600),
-              Text(title, style: gray__14__500),
-            ],
+          SizedBox(width: 16),
+          Flexible(
+            flex: 7,
+            child: Container(
+              //width: 90,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Text(headerText, style: gray__16__600)),
+                  FittedBox(
+                    fit: BoxFit.fitWidth,
+                    child: Text(footerText,
+                        style: gray__14__500.copyWith(fontSize: 12)),
+                  ),
+                ],
+              ),
+            ),
           ),
         ],
       ),
