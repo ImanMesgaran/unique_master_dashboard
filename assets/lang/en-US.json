@@ -16,5 +16,11 @@
       "marks": "Marks",
       "setting": "Setting"
     }
+  },
+  "schedule_page": {
+    "calendar_header": "January 11, 2021",
+    "day_title": "Day",
+    "week_title": "Week",
+    "calendar_title": "Calendar"
   }
 }
