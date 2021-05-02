@@ -20,10 +20,13 @@ class Routes {
     switch (settings.name) {
       // Splash
       case initialPage:
-        return MaterialPageRoute(
+        /*return MaterialPageRoute(
           builder: (BuildContext context) => HomePageRoute(
             selectedItem: 0,
           ),
+        );*/
+        return MaterialPageRoute(
+          builder: (BuildContext context) => SchedulesPageRoute(),
         );
 
       case homePage:

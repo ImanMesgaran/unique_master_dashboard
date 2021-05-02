@@ -14,6 +14,11 @@
       "request": "launch",
       "type": "dart",
       "args": ["--web-port=5000", "--web-enable-expression-evaluation"]
+    },
+    {
+      "name": "Flutter",
+      "request": "launch",
+      "type": "dart"
     }
   ]
 }
