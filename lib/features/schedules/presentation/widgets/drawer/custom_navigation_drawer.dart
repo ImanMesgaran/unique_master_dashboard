@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:octo_image/octo_image.dart';
-import 'package:unique_master_dashboard/features/schedules/presentation/cubit/cubit/drawer_cubit.dart';
+import 'package:unique_master_dashboard/features/schedules/presentation/cubit/drawer_cubit/drawer_cubit.dart';
 import 'package:unique_master_dashboard/features/schedules/presentation/widgets/list_tiles/drawer_list_tile.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:unique_master_dashboard/services/navigation/navigation_service_interface.dart';

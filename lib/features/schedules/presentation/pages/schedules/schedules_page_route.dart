@@ -4,10 +4,11 @@ import 'package:flutter_calendar_carousel/flutter_calendar_carousel.dart';
 import 'package:timelines/timelines.dart';
 import 'package:unique_master_dashboard/core/global/colors_web.dart';
 import 'package:unique_master_dashboard/core/global/text_styles.dart';
-import 'package:unique_master_dashboard/features/schedules/presentation/cubit/cubit/drawer_cubit.dart';
+import 'package:unique_master_dashboard/features/schedules/presentation/cubit/drawer_cubit/drawer_cubit.dart';
 import 'package:unique_master_dashboard/features/schedules/presentation/widgets/app_scaffold/app_scaffold.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:unique_master_dashboard/features/schedules/presentation/widgets/list_tiles/upcoming_plans_tile.dart';
+import 'package:unique_master_dashboard/features/schedules/presentation/widgets/time_line_table.dart/daily_timeline.dart';
 import 'package:unique_master_dashboard/services/navigation/navigation_service_interface.dart';
 import '../../../../../injection_container.dart' as di;
 
@@ -32,11 +33,16 @@ class _SchedulesPageRouteState extends State<SchedulesPageRoute> {
     return AppScaffold(
       selectedItem: 3,
       pageTitle: "home_page.title".tr(),
-      body: Row(
-        children: [
-          _mainView(),
-          _sideView(),
-        ],
+      body: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+          return ListView(
+            scrollDirection: Axis.horizontal,
+            children: [
+              _mainView(),
+              _sideView(width: constraints.maxWidth / 3),
+            ],
+          );
+        },
       ),
     );
   }
@@ -55,6 +61,7 @@ class _SchedulesPageRouteState extends State<SchedulesPageRoute> {
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
             children: [
               SizedBox(height: 25),
               Row(
@@ -80,9 +87,13 @@ class _SchedulesPageRouteState extends State<SchedulesPageRoute> {
                 ],
               ),
               SizedBox(height: 5),
-              Divider(color: app_gray_four_color),
-              SizedBox(height: 5),
-              Container(
+              Divider(
+                color: app_gray_five_color,
+                height: 0,
+              ),
+              //SizedBox(height: 5),
+              DailyTimeline(),
+              /*Container(
                 alignment: Alignment.centerLeft,
                 color: Colors.grey,
                 child: FixedTimeline.tileBuilder(
@@ -110,7 +121,7 @@ class _SchedulesPageRouteState extends State<SchedulesPageRoute> {
                     itemCount: 3,
                   ),
                 ),
-              ),
+              ),*/
             ],
           ),
         ),
@@ -118,42 +129,52 @@ class _SchedulesPageRouteState extends State<SchedulesPageRoute> {
     );
   }
 
-  _sideView() {
+  _sideView({double width}) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 25, vertical: 36),
-      width: MediaQuery.of(context).size.width / 3.9,
-      height: double.infinity,
-      color: app_gray_five_color,
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          color: app_white_color,
-        ),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: 25),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  SizedBox(width: 37),
-                  Text(
-                    'schedule_page.calendar_title'.tr(),
-                    style: black__18__600,
-                  ),
-                ],
+      width: width,
+      child: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+          if (constraints.maxWidth < 300) return Container();
+
+          return Container(
+            padding: EdgeInsets.symmetric(horizontal: 25, vertical: 36),
+            //width: MediaQuery.of(context).size.width / 3.9,
+            width: MediaQuery.of(context).size.width / 3.9,
+            height: double.infinity,
+            color: app_gray_five_color,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                color: app_white_color,
               ),
-              SizedBox(height: 5),
-              Divider(color: app_gray_four_color),
-              //SizedBox(height: 20),
-              _calendarView(),
-              SizedBox(height: 20),
-              Divider(color: app_gray_four_color),
-              _upCommingPlansWidget(),
-            ],
-          ),
-        ),
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: 25),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SizedBox(width: 37),
+                        Text(
+                          'schedule_page.calendar_title'.tr(),
+                          style: black__18__600,
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 5),
+                    Divider(color: app_gray_four_color),
+                    //SizedBox(height: 20),
+                    _calendarView(),
+                    SizedBox(height: 20),
+                    Divider(color: app_gray_four_color),
+                    _upCommingPlansWidget(),
+                  ],
+                ),
+              ),
+            ),
+          );
+        },
       ),
     );
   }
