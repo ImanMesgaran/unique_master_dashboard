@@ -38,8 +38,9 @@ class _SchedulesPageRouteState extends State<SchedulesPageRoute> {
           return ListView(
             scrollDirection: Axis.horizontal,
             children: [
-              _mainView(),
-              _sideView(width: constraints.maxWidth / 3),
+              _mainView(constraints.maxWidth),
+              if (constraints.maxWidth > 500)
+                _sideView(width: constraints.maxWidth / 3),
             ],
           );
         },
@@ -47,10 +48,12 @@ class _SchedulesPageRouteState extends State<SchedulesPageRoute> {
     );
   }
 
-  _mainView() {
+  _mainView(double maxWidth) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 25, vertical: 36),
-      width: MediaQuery.of(context).size.width / 2,
+      width: maxWidth < 600
+          ? MediaQuery.of(context).size.width
+          : MediaQuery.of(context).size.width / 2,
       height: double.infinity,
       color: app_background_color,
       child: Container(
